@@ -3,6 +3,21 @@
 @section('title', 'Listado de tareas')
 
 @section('content')
+    <section class="stats-grid">
+        <article class="stat-card">
+            <p class="stat-label">Total de tareas</p>
+            <p class="stat-value">{{ $resumen['total'] }}</p>
+        </article>
+        <article class="stat-card">
+            <p class="stat-label">Pendientes</p>
+            <p class="stat-value">{{ $resumen['pendientes'] }}</p>
+        </article>
+        <article class="stat-card">
+            <p class="stat-label">Completadas</p>
+            <p class="stat-value">{{ $resumen['completadas'] }}</p>
+        </article>
+    </section>
+
     <section class="panel">
         <div class="actions" style="justify-content: space-between; margin-bottom: 1.25rem;">
             <h2 class="panel-title" style="margin: 0;">Listado de tareas</h2>

@@ -14,7 +14,13 @@ class TareaController extends Controller
             ->orderByDesc('id')
             ->get();
 
-        return view('tareas.index', compact('tareas'));
+        $resumen = [
+            'total' => $tareas->count(),
+            'pendientes' => $tareas->where('completada', false)->count(),
+            'completadas' => $tareas->where('completada', true)->count(),
+        ];
+
+        return view('tareas.index', compact('tareas', 'resumen'));
     }
 
     public function create()

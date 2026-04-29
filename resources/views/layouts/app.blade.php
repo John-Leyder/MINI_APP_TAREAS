@@ -100,6 +100,32 @@
             margin-top: 1.25rem;
         }
 
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-card {
+            padding: 1.15rem 1.2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+        }
+
+        .stat-label {
+            margin: 0;
+            color: var(--text-soft);
+            font-size: 0.9rem;
+        }
+
+        .stat-value {
+            margin: 0.35rem 0 0;
+            font-size: 1.9rem;
+            font-weight: 800;
+        }
+
         .actions {
             display: flex;
             flex-wrap: wrap;
@@ -284,6 +310,7 @@
         }
 
         @media (max-width: 720px) {
+            .stats-grid,
             .header,
             .task-item {
                 grid-template-columns: 1fr;
