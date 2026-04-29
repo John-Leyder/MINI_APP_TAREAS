@@ -37,6 +37,20 @@ copy .env.example .env
 ```
 
 5. Configura la base de datos en `.env`.
+
+Ejemplo si vas a usar MySQL con XAMPP:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=mis_tareas
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Antes de migrar, crea la base de datos `mis_tareas` en tu gestor de MySQL.
+
 6. Genera la llave de la aplicación:
 
 ```bash
@@ -56,6 +70,14 @@ php artisan serve
 ```
 
 9. Abre la aplicación en `http://127.0.0.1:8000`.
+
+## Pruebas
+
+Para ejecutar las pruebas automatizadas:
+
+```bash
+php artisan test
+```
 
 ## Deploy
 
