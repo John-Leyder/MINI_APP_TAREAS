@@ -11,6 +11,7 @@ class TareaController extends Controller
     {
         $tareas = Tarea::query()
             ->orderByDesc('created_at')
+            ->orderByDesc('id')
             ->get();
 
         return view('tareas.index', compact('tareas'));

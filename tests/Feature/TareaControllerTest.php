@@ -12,12 +12,14 @@ class TareaControllerTest extends TestCase
 
     public function test_index_muestra_las_tareas_ordenadas_por_fecha_descendente(): void
     {
+        $marcaDeTiempo = now();
+
         $tareaAntigua = Tarea::create([
             'titulo' => 'Tarea antigua',
             'prioridad' => 'baja',
         ]);
         $tareaAntigua->forceFill([
-            'created_at' => now()->subMinute(),
+            'created_at' => $marcaDeTiempo,
         ])->saveQuietly();
 
         $tareaReciente = Tarea::create([
@@ -25,7 +27,7 @@ class TareaControllerTest extends TestCase
             'prioridad' => 'alta',
         ]);
         $tareaReciente->forceFill([
-            'created_at' => now(),
+            'created_at' => $marcaDeTiempo,
         ])->saveQuietly();
 
         $response = $this->get(route('tareas.index'));
