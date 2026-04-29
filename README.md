@@ -1,84 +1,77 @@
-# Mis Tareas
+# Mis Tareas 📝
 
-Mini-aplicación CRUD de gestión de tareas personales construida con Laravel.
+Mini-aplicación para la gestión de tareas personales, desarrollada como parte de la prueba técnica para la pasantía de Desarrollo Laravel.
 
-## Nombre del proyecto
+## 👤 Candidato
+**Nombre completo:** John Leyder Cárdenas
 
-Mis Tareas
+## 🛠️ Stack Tecnológico
+- **PHP:** 8.1.29
+- **Laravel:** 10.50.2
+- **Base de Datos:** MySQL (XAMPP)
+- **Frontend:** Laravel Blade + Vanilla CSS (Glassmorphism design)
 
-## Nombre completo
+## 📋 Requisitos Previos
+Antes de comenzar, asegúrate de tener instalado:
+- **PHP 8.1 o superior**
+- **Composer**
+- **MySQL** (recomendado vía XAMPP o Laragon)
 
-jhon stiven colorado
+## 🚀 Pasos para correr el proyecto localmente
 
-## Versiones usadas
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [URL-DEL-REPO]
+   cd MINI_APP_TAREAS
+   ```
 
-- PHP: 8.0.30
-- Laravel: 9.52.21
+2. **Instalar dependencias de PHP:**
+   ```bash
+   composer install
+   ```
 
-## Pasos para correr el proyecto localmente
+3. **Configurar el entorno:**
+   Copia el archivo de ejemplo y genera la llave de la aplicación:
+   ```bash
+   copy .env.example .env
+   php artisan key:generate
+   ```
 
-1. Clona este repositorio.
-2. Entra a la carpeta del proyecto:
+4. **Base de Datos:**
+   1. Abre tu gestor de base de datos (phpMyAdmin, MySQL Workbench, o terminal).
+   2. Crea una base de datos llamada **`mis_tareas`**:
+      ```sql
+      CREATE DATABASE mis_tareas;
+      ```
+   3. Configura tus credenciales en el archivo `.env` que creaste en el paso anterior:
+      ```env
+      DB_CONNECTION=mysql
+      DB_HOST=127.0.0.1
+      DB_PORT=3306
+      DB_DATABASE=mis_tareas
+      DB_USERNAME=root
+      DB_PASSWORD=
+      ```
 
-```bash
-cd "CRUD_PRUEBA TECNICA"
-```
+5. **Ejecutar Migraciones:**
+   Este comando creará las tablas necesarias automáticamente:
+   ```bash
+   php artisan migrate
+   ```
 
-3. Instala las dependencias:
+6. **Levantar el servidor:**
+   ```bash
+   php artisan serve
+   ```
+   La aplicación estará disponible en: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
-```bash
-composer install
-```
+## 📜 Características de la Aplicación
+- **CRUD Completo:** Crear, leer, editar y eliminar tareas.
+- **Gestión de Estados:** Marcar tareas como completadas/pendientes.
+- **Prioridades:** Clasificación por niveles (Baja, Media, Alta) con indicadores visuales.
+- **Validaciones:** Control estricto de campos según especificaciones de la prueba.
+- **Diseño Responsivo:** Interfaz moderna y adaptable.
 
-4. Crea el archivo de entorno:
+---
 
-```bash
-copy .env.example .env
-```
 
-5. Configura la base de datos en `.env`.
-
-Ejemplo si vas a usar MySQL con XAMPP:
-
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=mis_tareas
-DB_USERNAME=root
-DB_PASSWORD=
-```
-
-Antes de migrar, crea la base de datos `mis_tareas` en tu gestor de MySQL.
-
-6. Genera la llave de la aplicación:
-
-```bash
-php artisan key:generate
-```
-
-7. Ejecuta las migraciones:
-
-```bash
-php artisan migrate
-```
-
-8. Levanta el servidor local:
-
-```bash
-php artisan serve
-```
-
-9. Abre la aplicación en `http://127.0.0.1:8000`.
-
-## Pruebas
-
-Para ejecutar las pruebas automatizadas:
-
-```bash
-php artisan test
-```
-
-## Deploy
-
-No aplica por el momento.
